@@ -1,8 +1,8 @@
-\ProvidesClass{LaporanPKL}[07/02/2023 v1.0]
+\ProvidesClass{LaporanPKL}[11/07/2023 v1.1]
 \NeedsTeXFormat{LaTeX2e}
 \LoadClass[a4paper,12pt,twoside,openright]{book}
 \RequirePackage[hmargin={2.5cm,2cm},vmargin={2.5cm,2cm}]{geometry}
-\RequirePackage{graphicx,sectsty,setspace,amssymb,amsmath,amsthm,amsfonts,pxfonts,enumitem,indentfirst,tabularx,ifthen,lscape,hyperref,array,mathtools,subcaption,multirow,natbib,tikz,actuarialsymbol,actuarialangle,glossaries,wrapfig}
+\RequirePackage{graphicx,sectsty,setspace,amssymb,amsmath,amsthm,amsfonts,pxfonts,enumitem,indentfirst,tabularx,ifthen,lscape,hyperref,array,mathtools,subcaption,multirow,natbib,tikz,actuarialsymbol,actuarialangle,glossaries,wrapfig,pgfplots}
 \RequirePackage[bahasa]{babel}
 \usetikzlibrary{shapes.geometric, arrows}
 \loadglsentries{Istilah.tex}
@@ -138,6 +138,7 @@
 		Surabaya, \@tglsah\\
 		Menyetujui,
 	\end{center}
+	\vspace*{-2em}
 	\noindent
 	\begin{table}[h!]
 		\centering
@@ -152,7 +153,8 @@
 	\vspace{1cm}
 	\begin{center}
 		Mengetahui,\\
-		Koordinator Program Studi~\@prodi\\[9ex]
+		Koordinator Program Studi~\@prodi\\
+		Fakultas~\@fak\\[9ex]
 		\underline{\bfseries{\@kps}}\\
 		NIP \@NIPkps
 	\end{center}
@@ -166,24 +168,22 @@
 	\centerline{\large\bfseries{\MakeUppercase{Surat Pernyataan Keaslian}}}\\[7ex]
 	\noindent
 	Saya yang bertandatangan di bawah ini:\\
-	\begin{tabular}{@{}lcp{13cm}}
+	\begin{tabular}{@{}lcp{12cm}}
 		Nama & : & \@nama\\
 		NIM & : &  \@NIM\\
 		Program Studi & : & \@prodi\\
 		Judul PKL & : & \@judul
 	\end{tabular}\\[2ex]
 	menyatakan dengan sesungguhnya bahwa:
-	\begin{enumerate}
-		\item Isi sebagian maupun keseluruhan Praktik Kerja Lapangan saya yang berjudul tersebut di atas adalah benar benar hasil karya intelektual mandiri, diselesaikan tanpa menggunakan bahan-bahan yang tidak diijinkan dan bukan merupakan karya pihak lain yang saya akui sebagai karya sendiri.
+	\begin{daftar}
+		\item Isi sebagian maupun keseluruhan Praktik Kerja Lapangan saya yang berjudul tersebut di atas adalah benar-benar hasil karya intelektual mandiri, diselesaikan tanpa menggunakan data/dokumen yang tidak diizinkan dan bukan merupakan karya pihak lain yang saya akui sebagai karya sendiri.
 		\item Semua referensi yang dikutip maupun dirujuk telah ditulis secara lengkap pada daftar pustaka.
-		\item Apabila ternyata dikemudian hari produk penelitian/skripsi ini merupakan hasil plagiat atau penjiplakan terhadap karya orang lain, maka saya bersedia menerima sanksi berdasarkan aturan yang berlaku di Negera Kesatuan Republik Indonesia.
-	\end{enumerate}
+		\item Apabila ternyata di kemudian hari karya ini merupakan hasil plagiat atau penjiplakan terhadap karya orang lain, maka saya bersedia menerima sanksi berdasarkan aturan yang berlaku di Negera Kesatuan Republik Indonesia.
+	\end{daftar}
 	Demikianlah surat pernyataan ini saya buat dengan sesungguhnya, untuk dapat dipergunakan sebagaimana mestinya.\\[3ex]
 	\begin{tabular}{p{10cm}l}
 		& Surabaya, \@tglsah\\
-		& Yang membuat pernyataan,\\[3ex]
-		& Meterai\\
-		& (Rp. 10.000)\\[6ex]
+		& Yang membuat pernyataan,\\[13ex]
 		& \@nama\\
 		& NIM. \@NIM
 	\end{tabular}
@@ -429,7 +429,7 @@
 }
 
 \newlist{daftar}{enumerate}{1}
-\setlist[daftar]{labelindent=2em,leftmargin=*,listparindent=2em,partopsep=0pt, topsep=0pt,itemsep=0pt,parsep=0pt,label=\arabic*.}
+\setlist[daftar]{labelindent=0em,leftmargin=*,listparindent=0em,partopsep=0pt, topsep=0pt,itemsep=0pt,parsep=0pt,label=\arabic*.}
 \newlist{subdaftar}{enumerate}{1}
 \setlist[subdaftar]{leftmargin=*,partopsep=0pt, topsep=0pt,itemsep=0pt,parsep=0pt,label=\alph*.}
 
@@ -450,4 +450,3 @@
 \lefthyphenmin=5
 \righthyphenmin=5
 \sloppy
-\pagestyle{myheadings}
